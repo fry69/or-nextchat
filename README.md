@@ -1,11 +1,20 @@
-# OpenRouter SDK Next.js Demo
+# Updated OpenRouter SDK Next.js Demo
+
+Originally forked from [nextjs-example](https://github.com/OpenRouterTeam/typescript-sdk/tree/main/examples/nextjs-example)
+
+This is a updated version of the Next.js demo application for the OpenRouter SDK. Main changes include:
+
+- Upgraded to Next.js 16
+- OAuth re-implementation
+
+Original README below (adapted as needed):
 
 This is a demonstration application that shows how to create a chat interface
 using the [OpenRouter SDK](https://github.com/openrouterteam/typescript-sdk). The
 app implements OAuth 2.0 authentication flow and provides a complete chat
 experience with multiple AI models.
 
-> **⚠️ Security Notice**: This demo application stores API keys in localStorage
+> **⚠️ Security Notice**: This demo application stores unencrypted API keys in localStorage
 > for demonstration purposes only. **Do not use this approach in production
 > applications**.
 
@@ -19,24 +28,27 @@ experience with multiple AI models.
 
 ## Prerequisites
 
-- Node.js 18 or later
+- Node.js 22 or later
 - An [OpenRouter account](https://openrouter.ai)
 - OpenRouter application configured with OAuth callback
 
 ## Installation
 
 1. Clone the repository and navigate to the example directory:
+
 ```bash
 git clone <repository-url>
-cd typescript-sdk/examples/nextjs-example
+cd or-nextchat
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -105,7 +117,7 @@ const openRouter = new OpenRouterCore({ apiKey });
 const result = await chatSend(openRouter, {
   model: "openai/gpt-4o",
   messages: conversationHistory,
-  stream: true
+  stream: true,
 });
 ```
 
@@ -116,3 +128,6 @@ const result = await chatSend(openRouter, {
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
 
+## License
+
+This project is licensed under the MIT License, see the [LICENSE](LICENSE) file for details.
